@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <ChatSDK/bPictureTypes.h>
 #import <TOCropViewController/TOCropViewController.h>
+#import <ChatSDK/BChatViewController.h>
 #import <ChatSDK/PAction.h>
 
 @class RXPromise;
@@ -16,7 +17,7 @@
     UIImagePickerController * _picker;
     RXPromise * _promise;
     bPictureType _type;
-    __weak UIViewController * _controller;
+    __weak BChatViewController * _controller;
 }
 
 @property (nonatomic, readwrite) UIImage * coverImage;
