@@ -52,7 +52,10 @@
     // This code fixes an issue where the picker isn't loaded in iOS 8 and above sometimes on devices
     // This seems to be due to UIActionSheet delegate being depreciated
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [_controller presentViewController:_picker animated:NO completion:nil];
+        self->_controller.popover =[[UIPopoverController alloc]initWithContentViewController:_picker];
+        [self->_controller.popover presentPopoverFromRect:self->_controller.sendBarView.frame inView:self->_controller.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
+//        [_controller presentViewController:_picker animated:NO completion:nil];
     }];
     
     return _promise;

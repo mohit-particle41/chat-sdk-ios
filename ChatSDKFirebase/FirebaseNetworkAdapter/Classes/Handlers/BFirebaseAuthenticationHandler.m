@@ -196,7 +196,7 @@
     
     __weak __typeof__(self) weakSelf = self;
     return tokenPromise.thenOnMain(^id(NSString * token) {
-        __typeof__(self) strongSelf = weakSelf;
+        __typeof__(self) strongSelf = self;
 
         NSString * uid = firebaseUser.uid;
         
